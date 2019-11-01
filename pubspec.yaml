@@ -1,0 +1,44 @@
+name: gpx_tunner
+description: A new Flutter application.
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.1.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^0.1.2
+  bloc_pattern: ^2.3.4
+  rxdart: ^0.22.3
+  xml: ^3.5.0
+  permission_handler: ^3.2.0
+  flutter_document_picker: ^3.0.0
+  date_format: ^1.0.6
+  dynamic_theme_changer:
+    path: ../_packages_/dynamic_theme_changer
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/images/ic_gpx_shadow.png
+    - assets/images/strava_logo.png
+
+  # fonts:
+  #   - family: Schyler
+  #     fonts:
+  #       - asset: fonts/Schyler-Regular.ttf
+  #       - asset: fonts/Schyler-Italic.ttf
+  #         style: italic
+  #   - family: Trajan Pro
+  #     fonts:
+  #       - asset: fonts/TrajanPro.ttf
+  #       - asset: fonts/TrajanPro_Bold.ttf
+  #         weight: 700
