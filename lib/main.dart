@@ -3,6 +3,7 @@ import 'package:bloc_pattern/bloc_pattern.dart';
 import 'package:dynamic_theme_changer/dynamic_theme_changer.dart';
 import 'package:gpx_tunner/blocs/app_permissions_bloc.dart';
 import 'package:gpx_tunner/app_themes.dart';
+import 'package:gpx_tunner/blocs/gpx_tunner_bloc.dart';
 import 'package:gpx_tunner/ui/pages/app_start_page.dart';
 import 'package:gpx_tunner/ui/pages/home_page.dart';
 import 'package:gpx_tunner/ui/pages/settings_page.dart';
@@ -20,6 +21,7 @@ class GpxTunnerApp extends StatelessWidget {
       blocs: [
         Bloc((i) => ThemeBloc()),
         Bloc((i) => AppPermissionsBloc()),
+        Bloc((i) => GpxTunnerBloc()),
       ],
       child: AppMainPage(),
     );

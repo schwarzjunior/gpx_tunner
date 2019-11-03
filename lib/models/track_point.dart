@@ -111,12 +111,12 @@ class _TrackPointTime with DateUtils {
 }
 
 mixin DateUtils {
-  static final _pattern = []
-    ..addAll([df.yyyy, '-', df.mm, '-', df.dd, 'T'])
-    ..addAll([df.HH, ':', df.nn, ':', df.ss, df.z]);
+  final _pattern = [df.yyyy, '-', df.mm, '-', df.dd, 'T', df.HH, ':', df.nn, ':', df.ss, df.z];
 
   /// Retorna o [dateTime] formatado.
-  String _formatDate(DateTime dateTime) => df.formatDate(dateTime.toUtc(), _pattern);
+  String _formatDate(DateTime dateTime) {
+    return df.formatDate(dateTime.toUtc(), _pattern);
+  }
 
   /// Ajusta o numero de zeros a esquerda de um valor numerico.
   String _padWithZeros(num value, {int size = 2}) {

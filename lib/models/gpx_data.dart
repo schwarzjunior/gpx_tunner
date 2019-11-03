@@ -18,12 +18,12 @@ class GpxData with _PathUtils {
   String _content;
 
   /// Lista dos [TrackPoint].
-  List<TrackPoint> get tpList => _tpList;
-  List<TrackPoint> _tpList;
+  List<TrackPoint> get trackPoints => _trackPoints;
+  List<TrackPoint> _trackPoints;
 
   set content(String value) => _content = value;
 
-  set trackPoints(List<TrackPoint> value) => _tpList = value;
+  set trackPoints(List<TrackPoint> value) => _trackPoints = value;
 
   set filePath(String value) {
     _filePath = value;
@@ -32,21 +32,21 @@ class GpxData with _PathUtils {
   }
 
   /// O primeiro [TrackPoint] da lista.
-  TrackPoint get firstTp => _tpList.first;
+  TrackPoint get firstTp => _trackPoints.first;
 
   /// O ultimo [TrackPoint] da lista.
-  TrackPoint get lastTP => _tpList.last;
+  TrackPoint get lastTP => _trackPoints.last;
 
   void addTrackPoint(TrackPoint trackPoint) {
-    _tpList.add(trackPoint);
+    _trackPoints.add(trackPoint);
   }
 
   void adjustTimes(int hoursToAdd) {
-    for (TrackPoint tp in _tpList) tp.adjustTime(hoursToAdd);
+    for (TrackPoint tp in _trackPoints) tp.adjustTime(hoursToAdd);
   }
 
   int getMediaHr() {
-    var hrList = _tpList
+    var hrList = _trackPoints
         .map((tp) => tp.hr != null && tp.hr.isNotEmpty ? int.parse(tp.hr) : null)
         .where((tpHr) => tpHr != null);
     return hrList.reduce((value, element) => value + element) ~/ hrList.length;
